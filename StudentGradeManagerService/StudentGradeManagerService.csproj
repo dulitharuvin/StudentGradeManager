@@ -50,10 +50,12 @@
   <ItemGroup>
     <Compile Include="CourseService.cs" />
     <Compile Include="ICourseService.cs" />
-    <Compile Include="IModuleService.cs" />
+    <Compile Include="ICourseModuleService.cs" />
+    <Compile Include="IModuleAssessmentService.cs" />
     <Compile Include="IResultService.cs" />
     <Compile Include="IStudentService.cs" />
-    <Compile Include="ModuleService.cs" />
+    <Compile Include="CourseModuleService.cs" />
+    <Compile Include="ModuleAssessmentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultService.cs" />
     <Compile Include="StudentService.cs" />
@@ -61,12 +63,22 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\StudentDataModel.Class1.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.Course.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.CourseModule.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.ModuleAssessment.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.Result.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.Student.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.STUDENT_GRADE_MANGEREntities.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StudentDataModel\StudentDataModel.csproj">
       <Project>{10c2c00c-f242-42c2-8ca9-d15442c1ceba}</Project>
       <Name>StudentDataModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

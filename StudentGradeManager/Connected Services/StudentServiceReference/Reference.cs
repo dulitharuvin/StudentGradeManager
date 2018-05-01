@@ -85,10 +85,10 @@ namespace StudentGradeManager.StudentServiceReference {
         System.Threading.Tasks.Task<int> SaveStudentAsync(StudentDataModel.Student student);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/StudentLoginValidate", ReplyAction="http://tempuri.org/IStudentService/StudentLoginValidateResponse")]
-        bool StudentLoginValidate(string userName, string password);
+        StudentDataModel.DTO.StudentDTO StudentLoginValidate(string userName, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/StudentLoginValidate", ReplyAction="http://tempuri.org/IStudentService/StudentLoginValidateResponse")]
-        System.Threading.Tasks.Task<bool> StudentLoginValidateAsync(string userName, string password);
+        System.Threading.Tasks.Task<StudentDataModel.DTO.StudentDTO> StudentLoginValidateAsync(string userName, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/GetStudentById", ReplyAction="http://tempuri.org/IStudentService/GetStudentByIdResponse")]
         StudentDataModel.Student GetStudentById(System.Guid studentId);
@@ -97,10 +97,10 @@ namespace StudentGradeManager.StudentServiceReference {
         System.Threading.Tasks.Task<StudentDataModel.Student> GetStudentByIdAsync(System.Guid studentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/GetStudentEnrolledCourses", ReplyAction="http://tempuri.org/IStudentService/GetStudentEnrolledCoursesResponse")]
-        StudentDataModel.Course[] GetStudentEnrolledCourses(System.Guid studentId);
+        StudentDataModel.DTO.CourseDTO[] GetStudentEnrolledCourses(System.Guid studentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/GetStudentEnrolledCourses", ReplyAction="http://tempuri.org/IStudentService/GetStudentEnrolledCoursesResponse")]
-        System.Threading.Tasks.Task<StudentDataModel.Course[]> GetStudentEnrolledCoursesAsync(System.Guid studentId);
+        System.Threading.Tasks.Task<StudentDataModel.DTO.CourseDTO[]> GetStudentEnrolledCoursesAsync(System.Guid studentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IStudentService/GetDataUsingDataContractResponse")]
         StudentGradeManager.StudentServiceReference.CompositeType GetDataUsingDataContract(StudentGradeManager.StudentServiceReference.CompositeType composite);
@@ -144,11 +144,11 @@ namespace StudentGradeManager.StudentServiceReference {
             return base.Channel.SaveStudentAsync(student);
         }
         
-        public bool StudentLoginValidate(string userName, string password) {
+        public StudentDataModel.DTO.StudentDTO StudentLoginValidate(string userName, string password) {
             return base.Channel.StudentLoginValidate(userName, password);
         }
         
-        public System.Threading.Tasks.Task<bool> StudentLoginValidateAsync(string userName, string password) {
+        public System.Threading.Tasks.Task<StudentDataModel.DTO.StudentDTO> StudentLoginValidateAsync(string userName, string password) {
             return base.Channel.StudentLoginValidateAsync(userName, password);
         }
         
@@ -160,11 +160,11 @@ namespace StudentGradeManager.StudentServiceReference {
             return base.Channel.GetStudentByIdAsync(studentId);
         }
         
-        public StudentDataModel.Course[] GetStudentEnrolledCourses(System.Guid studentId) {
+        public StudentDataModel.DTO.CourseDTO[] GetStudentEnrolledCourses(System.Guid studentId) {
             return base.Channel.GetStudentEnrolledCourses(studentId);
         }
         
-        public System.Threading.Tasks.Task<StudentDataModel.Course[]> GetStudentEnrolledCoursesAsync(System.Guid studentId) {
+        public System.Threading.Tasks.Task<StudentDataModel.DTO.CourseDTO[]> GetStudentEnrolledCoursesAsync(System.Guid studentId) {
             return base.Channel.GetStudentEnrolledCoursesAsync(studentId);
         }
         

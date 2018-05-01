@@ -1,4 +1,5 @@
-﻿using StudentGradeManager.StudentServiceReference;
+﻿using StudentDataModel.DTO;
+using StudentGradeManager.StudentServiceReference;
 using System;
 using System.Windows.Forms;
 
@@ -24,12 +25,13 @@ namespace StudentGradeManager
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            if (AuthenticateStudentUser())
+            var loggedInStudent = AuthenticateStudentUser();
+            if (loggedInStudent != null)
             {
                 this.Hide();
-                mainForm = new MainForm();
+                mainForm = new MainForm(loggedInStudent);
                 mainForm.Closed += (s, args) => this.Close();
-                mainForm.Show();
+                mainForm.ShowDialog();
             }
             else
             {
@@ -45,10 +47,10 @@ namespace StudentGradeManager
             ClearLoginForm();
         }
 
-        public bool AuthenticateStudentUser()
+        public StudentDTO AuthenticateStudentUser()
         {
-            var isUserAuthenticated = studentService.StudentLoginValidate(userName.Text.Trim(), password.Text);
-            return isUserAuthenticated;
+            var loggedInStudent = studentService.StudentLoginValidate(userName.Text.Trim(), password.Text);
+            return loggedInStudent;
         }
 
         public void ClearLoginForm()

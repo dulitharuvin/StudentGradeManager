@@ -5,6 +5,9 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using StudentDataModel;
+using StudentDataModel.DTO;
+using AutoMapper.QueryableExtensions;
+using StudentDataModel.AutoMapper;
 
 namespace StudentGradeManagerService
 {
@@ -31,21 +34,23 @@ namespace StudentGradeManagerService
 
         }
 
-        public bool StudentLoginValidate(string userName, string password)
+        public StudentDTO StudentLoginValidate(string userName, string password)
         {
+            AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperProfile>());
             try
             {
                 using (var context = new STUDENT_GRADE_MANGEREntities())
                 {
                     var student = context.Student.Where(st => string.Equals(st.UserName, userName) && string.Equals(st.Password, password))
+                        .ProjectTo<StudentDTO>()
                         .FirstOrDefault();
-                    return student != null;
+                    return student;
                 }
             }
             catch (Exception ex)
             {
                 Console.Write(ex);
-                return false;
+                return null;
             }
         }
 
@@ -67,13 +72,16 @@ namespace StudentGradeManagerService
             }
         }
 
-        public IList<Course> GetStudentEnrolledCourses(Guid studentId)
+        public List<CourseDTO> GetStudentEnrolledCourses(Guid studentId)
         {
+            AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperProfile>());
             try
             {
                 using (var context = new STUDENT_GRADE_MANGEREntities())
                 {
-                    var studentCourses = context.Course.Where(st => st.StudentID == studentId).ToList();
+                    var studentCourses = context.Course.Where(st => st.StudentID == studentId)
+                        .ProjectTo<CourseDTO>()
+                        .ToList();
                     return studentCourses;
                 }
             }

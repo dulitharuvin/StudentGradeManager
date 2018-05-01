@@ -14,7 +14,7 @@ namespace StudentGradeManagerService
         public List<Course> GetData()
         {
             using (var context = new STUDENT_GRADE_MANGEREntities())
-            { 
+            {
                 return context.Course.ToList();
             }
         }
@@ -23,10 +23,19 @@ namespace StudentGradeManagerService
         {
             c.CreatedDate = DateTime.Now;
             c.UpdatedDate = DateTime.Now;
-            using (var context = new STUDENT_GRADE_MANGEREntities())
+
+            try
             {
-                context.Course.Add(c);
-                return context.SaveChanges();
+                using (var context = new STUDENT_GRADE_MANGEREntities())
+                {
+                    context.Course.Add(c);
+                    return context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return 0;
             }
         }
     }

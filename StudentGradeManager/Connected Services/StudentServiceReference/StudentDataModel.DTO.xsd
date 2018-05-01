@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/StudentDataModel.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/StudentDataModel.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="StudentDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expired" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentID" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StudentDTO" nillable="true" type="tns:StudentDTO" />
+  <xs:complexType name="ArrayOfCourseDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CourseDTO" nillable="true" type="tns:CourseDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCourseDTO" nillable="true" type="tns:ArrayOfCourseDTO" />
+  <xs:complexType name="CourseDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseID" type="ser:guid" />
+      <xs:element minOccurs="0" name="CourseTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expired" type="xs:int" />
+      <xs:element minOccurs="0" name="StudentID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CourseDTO" nillable="true" type="tns:CourseDTO" />
+</xs:schema>

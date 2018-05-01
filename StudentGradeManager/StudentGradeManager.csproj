@@ -50,6 +50,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewCourseForm.Designer.cs">
+      <DependentUpon>AddNewCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\CourseModuleServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\CourseServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ModuleAssessmentServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ResultServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\StudentServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,6 +107,9 @@
     <Compile Include="SummaryForm.Designer.cs">
       <DependentUpon>SummaryForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewCourseForm.resx">
+      <DependentUpon>AddNewCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,11 +131,48 @@
     <EmbeddedResource Include="SummaryForm.resx">
       <DependentUpon>SummaryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\CourseModuleServiceReference\service.wsdl" />
+    <None Include="Connected Services\CourseModuleServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CourseModuleServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CourseModuleServiceReference\StudentDataModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CourseServiceReference\service.wsdl" />
+    <None Include="Connected Services\CourseServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CourseServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CourseServiceReference\StudentDataModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ModuleAssessmentServiceReference\service.wsdl" />
+    <None Include="Connected Services\ModuleAssessmentServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ResultServiceReference\service.wsdl" />
+    <None Include="Connected Services\ResultServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ResultServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ResultServiceReference\StudentDataModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\StudentServiceReference\service.wsdl" />
     <None Include="Connected Services\StudentServiceReference\service.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\StudentServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\StudentServiceReference\StudentDataModel.DTO.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\StudentServiceReference\StudentDataModel.xsd">
@@ -119,8 +185,15 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\StudentDataModel.Class1.datasource" />
     <None Include="Properties\DataSources\StudentDataModel.Course.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.CourseModule.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.DTO.CourseDTO.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.DTO.StudentDTO.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.ModuleAssessment.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.Result.datasource" />
     <None Include="Properties\DataSources\StudentDataModel.Student.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.STUDENT_GRADE_MANGEREntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,7 +217,59 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CourseModuleServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\CourseServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\ModuleAssessmentServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\ResultServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\StudentServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CourseModuleServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CourseModuleServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CourseModuleServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CourseServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CourseServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CourseServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ResultServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ResultServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ResultServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ModuleAssessmentServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ModuleAssessmentServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ModuleAssessmentServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\StudentServiceReference\configuration91.svcinfo" />

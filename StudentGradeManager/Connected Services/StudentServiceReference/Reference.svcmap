@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6aecc174-a969-44c3-ab11-db1b29f914a8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b91fba82-6226-4e06-9022-8fe96f92c7f3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="3d5aa097-b9a3-47a2-851a-730e7e08d96e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="2b8193c7-ac88-40d3-8a35-ee67cd61f1c4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="4b42fcc5-3069-4fab-baf4-543d4424633c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
-    <MetadataFile FileName="StudentDataModel.xsd" MetadataType="Schema" ID="42b2f195-309f-400a-9616-1db73f23c2cf" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
-    <MetadataFile FileName="StudentGradeManagerService.xsd" MetadataType="Schema" ID="802dd775-ecd8-4518-a52b-a7cd4b4a83d6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="3b3ebc1a-d489-4913-8d27-2e4330ee2e68" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="5b4b9a8a-9a78-4d29-bc34-6c984adf9f8e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="cbbcf8dc-5db0-4f9f-be96-03fcd30082e2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
+    <MetadataFile FileName="StudentDataModel.xsd" MetadataType="Schema" ID="9e905ae4-cba7-40db-bfe7-2b281f44be6e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
+    <MetadataFile FileName="StudentDataModel.DTO.xsd" MetadataType="Schema" ID="c1e32351-83ec-4c3d-ac30-6d1222490b26" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
+    <MetadataFile FileName="StudentGradeManagerService.xsd" MetadataType="Schema" ID="b64381ff-9d24-4429-82ec-4905b8069c63" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

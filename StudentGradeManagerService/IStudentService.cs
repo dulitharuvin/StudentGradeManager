@@ -1,9 +1,9 @@
-﻿using System;
+﻿using StudentDataModel;
+using StudentDataModel.DTO;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
 
 namespace StudentGradeManagerService
 {
@@ -12,16 +12,16 @@ namespace StudentGradeManagerService
     public interface IStudentService
     {
         [OperationContract]
-        int SaveStudent(StudentDataModel.Student student);
+        int SaveStudent(Student student);
 
         [OperationContract]
-        bool StudentLoginValidate(string userName, string password);
+        StudentDTO StudentLoginValidate(string userName, string password);
 
         [OperationContract]
-        StudentDataModel.Student GetStudentById(Guid studentId);
+        Student GetStudentById(Guid studentId);
 
         [OperationContract]
-        IList<StudentDataModel.Course> GetStudentEnrolledCourses(Guid studentId);
+        List<CourseDTO> GetStudentEnrolledCourses(Guid studentId);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
