@@ -8,24 +8,24 @@ using StudentDataModel;
 
 namespace StudentGradeManagerService
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "CourseService" in both code and config file together.
-    public class CourseService : ICourseService
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ResultService" in both code and config file together.
+    public class ResultService : IResultService
     {
-        public List<Course> GetData()
+        public List<Result> GetData()
         {
             using (var context = new STUDENT_GRADE_MANGEREntities())
-            { 
-                return context.Course.ToList();
+            {
+                return context.Result.ToList();
             }
         }
 
-        public int SaveCourse(Course c)
+        public int SaveResult(Result r)
         {
-            c.CreatedDate = DateTime.Now;
-            c.UpdatedDate = DateTime.Now;
+            r.CreatedDate = DateTime.Now;
+            r.UpdatedDate = DateTime.Now;
             using (var context = new STUDENT_GRADE_MANGEREntities())
             {
-                context.Course.Add(c);
+                context.Result.Add(r);
                 return context.SaveChanges();
             }
         }
