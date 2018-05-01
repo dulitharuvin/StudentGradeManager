@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="STUDENT_GRADE_MANGERModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StudentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CourseTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="CourseDescription" Type="nvarchar" MaxLength="350" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+          <Property Name="Expired" Type="int" />
+        </EntityType>
+        <EntityType Name="CourseModule">
+          <Key>
+            <PropertyRef Name="CourseModuleID" />
+          </Key>
+          <Property Name="CourseModuleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CourseID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CourseModuleTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="CourseModuleCode" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CourseModuleCreditValue" Type="float" Nullable="false" />
+          <Property Name="CourseModuleDescription" Type="nvarchar" MaxLength="350" />
+          <Property Name="ModuleType" Type="int" Nullable="false" />
+          <Property Name="Level" Type="int" Nullable="false" />
+          <Property Name="ContributedToFinal" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+          <Property Name="Expired" Type="int" />
+        </EntityType>
+        <EntityType Name="ModuleAssessment">
+          <Key>
+            <PropertyRef Name="ModuleAssessmentID" />
+          </Key>
+          <Property Name="ModuleAssessmentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CourseModuleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModuleAssessmentTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="ModuleAssessmentDescription" Type="nvarchar" MaxLength="350" />
+          <Property Name="PassingMark" Type="float" Nullable="false" />
+          <Property Name="Weighting" Type="float" Nullable="false" />
+          <Property Name="AssessmentType" Type="int" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+          <Property Name="Expired" Type="int" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="ResultID" />
+          </Key>
+          <Property Name="ResultID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModuleAssessmentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Mark" Type="float" Nullable="false" />
+          <Property Name="PredictedMark" Type="float" Nullable="false" />
+          <Property Name="Grade" Type="int" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+          <Property Name="Expired" Type="int" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="320" Nullable="false" />
+          <Property Name="Nic" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+          <Property Name="Expired" Type="int" />
+        </EntityType>
+        <Association Name="FK_Course_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseModule_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="CourseModule" Type="Self.CourseModule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="CourseModule">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModuleAssessment_CourseModule">
+          <End Role="CourseModule" Type="Self.CourseModule" Multiplicity="1" />
+          <End Role="ModuleAssessment" Type="Self.ModuleAssessment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseModule">
+              <PropertyRef Name="CourseModuleID" />
+            </Principal>
+            <Dependent Role="ModuleAssessment">
+              <PropertyRef Name="CourseModuleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_ModuleAssessment">
+          <End Role="ModuleAssessment" Type="Self.ModuleAssessment" Multiplicity="1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModuleAssessment">
+              <PropertyRef Name="ModuleAssessmentID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="ModuleAssessmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="STUDENT_GRADE_MANGERModelStoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CourseModule" EntityType="Self.CourseModule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModuleAssessment" EntityType="Self.ModuleAssessment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Course_Student" Association="Self.FK_Course_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseModule_Course" Association="Self.FK_CourseModule_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="CourseModule" EntitySet="CourseModule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModuleAssessment_CourseModule" Association="Self.FK_ModuleAssessment_CourseModule">
+            <End Role="CourseModule" EntitySet="CourseModule" />
+            <End Role="ModuleAssessment" EntitySet="ModuleAssessment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_ModuleAssessment" Association="Self.FK_Result_ModuleAssessment">
+            <End Role="ModuleAssessment" EntitySet="ModuleAssessment" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="STUDENT_GRADE_MANGERModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="Guid" Nullable="false" />
+          <Property Name="StudentID" Type="Guid" Nullable="false" />
+          <Property Name="CourseTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CourseDescription" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="7" />
+          <Property Name="Expired" Type="Int32" />
+          <NavigationProperty Name="Student" Relationship="Self.FK_Course_Student" FromRole="Course" ToRole="Student" />
+          <NavigationProperty Name="CourseModule" Relationship="Self.FK_CourseModule_Course" FromRole="Course" ToRole="CourseModule" />
+        </EntityType>
+        <EntityType Name="CourseModule">
+          <Key>
+            <PropertyRef Name="CourseModuleID" />
+          </Key>
+          <Property Name="CourseModuleID" Type="Guid" Nullable="false" />
+          <Property Name="CourseID" Type="Guid" Nullable="false" />
+          <Property Name="CourseModuleTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CourseModuleCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CourseModuleDescription" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="ModuleType" Type="Int32" Nullable="false" />
+          <Property Name="Level" Type="Int32" Nullable="false" />
+          <Property Name="ContributedToFinal" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="7" />
+          <Property Name="Expired" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_CourseModule_Course" FromRole="CourseModule" ToRole="Course" />
+          <NavigationProperty Name="ModuleAssessment" Relationship="Self.FK_ModuleAssessment_CourseModule" FromRole="CourseModule" ToRole="ModuleAssessment" />
+          <Property Name="CourseModuleCreditValue" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ModuleAssessment">
+          <Key>
+            <PropertyRef Name="ModuleAssessmentID" />
+          </Key>
+          <Property Name="ModuleAssessmentID" Type="Guid" Nullable="false" />
+          <Property Name="CourseModuleID" Type="Guid" Nullable="false" />
+          <Property Name="ModuleAssessmentTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ModuleAssessmentDescription" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="PassingMark" Type="Double" Nullable="false" />
+          <Property Name="Weighting" Type="Double" Nullable="false" />
+          <Property Name="AssessmentType" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="7" />
+          <Property Name="Expired" Type="Int32" />
+          <NavigationProperty Name="CourseModule" Relationship="Self.FK_ModuleAssessment_CourseModule" FromRole="ModuleAssessment" ToRole="CourseModule" />
+          <NavigationProperty Name="Result" Relationship="Self.FK_Result_ModuleAssessment" FromRole="ModuleAssessment" ToRole="Result" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="ResultID" />
+          </Key>
+          <Property Name="ResultID" Type="Guid" Nullable="false" />
+          <Property Name="ModuleAssessmentID" Type="Guid" Nullable="false" />
+          <Property Name="Mark" Type="Double" Nullable="false" />
+          <Property Name="PredictedMark" Type="Double" Nullable="false" />
+          <Property Name="Grade" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="7" />
+          <Property Name="Expired" Type="Int32" />
+          <NavigationProperty Name="ModuleAssessment" Relationship="Self.FK_Result_ModuleAssessment" FromRole="Result" ToRole="ModuleAssessment" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="320" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="7" />
+          <Property Name="Expired" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_Course_Student" FromRole="Student" ToRole="Course" />
+        </EntityType>
+        <Association Name="FK_Course_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseModule_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="CourseModule" Type="Self.CourseModule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="CourseModule">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModuleAssessment_CourseModule">
+          <End Role="CourseModule" Type="Self.CourseModule" Multiplicity="1" />
+          <End Role="ModuleAssessment" Type="Self.ModuleAssessment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseModule">
+              <PropertyRef Name="CourseModuleID" />
+            </Principal>
+            <Dependent Role="ModuleAssessment">
+              <PropertyRef Name="CourseModuleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_ModuleAssessment">
+          <End Role="ModuleAssessment" Type="Self.ModuleAssessment" Multiplicity="1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModuleAssessment">
+              <PropertyRef Name="ModuleAssessmentID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="ModuleAssessmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="STUDENT_GRADE_MANGEREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Course" EntityType="Self.Course" />
+          <EntitySet Name="CourseModule" EntityType="Self.CourseModule" />
+          <EntitySet Name="ModuleAssessment" EntityType="Self.ModuleAssessment" />
+          <EntitySet Name="Result" EntityType="Self.Result" />
+          <EntitySet Name="Student" EntityType="Self.Student" />
+          <AssociationSet Name="FK_Course_Student" Association="Self.FK_Course_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseModule_Course" Association="Self.FK_CourseModule_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="CourseModule" EntitySet="CourseModule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModuleAssessment_CourseModule" Association="Self.FK_ModuleAssessment_CourseModule">
+            <End Role="CourseModule" EntitySet="CourseModule" />
+            <End Role="ModuleAssessment" EntitySet="ModuleAssessment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_ModuleAssessment" Association="Self.FK_Result_ModuleAssessment">
+            <End Role="ModuleAssessment" EntitySet="ModuleAssessment" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="STUDENT_GRADE_MANGERModelStoreContainer" CdmEntityContainer="STUDENT_GRADE_MANGEREntities">
+          <EntitySetMapping Name="Course">
+            <EntityTypeMapping TypeName="STUDENT_GRADE_MANGERModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="CourseTitle" ColumnName="CourseTitle" />
+                <ScalarProperty Name="CourseDescription" ColumnName="CourseDescription" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseModule">
+            <EntityTypeMapping TypeName="STUDENT_GRADE_MANGERModel.CourseModule">
+              <MappingFragment StoreEntitySet="CourseModule">
+                <ScalarProperty Name="CourseModuleCreditValue" ColumnName="CourseModuleCreditValue" />
+                <ScalarProperty Name="CourseModuleID" ColumnName="CourseModuleID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="CourseModuleTitle" ColumnName="CourseModuleTitle" />
+                <ScalarProperty Name="CourseModuleCode" ColumnName="CourseModuleCode" />
+                <ScalarProperty Name="CourseModuleDescription" ColumnName="CourseModuleDescription" />
+                <ScalarProperty Name="ModuleType" ColumnName="ModuleType" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="ContributedToFinal" ColumnName="ContributedToFinal" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ModuleAssessment">
+            <EntityTypeMapping TypeName="STUDENT_GRADE_MANGERModel.ModuleAssessment">
+              <MappingFragment StoreEntitySet="ModuleAssessment">
+                <ScalarProperty Name="ModuleAssessmentID" ColumnName="ModuleAssessmentID" />
+                <ScalarProperty Name="CourseModuleID" ColumnName="CourseModuleID" />
+                <ScalarProperty Name="ModuleAssessmentTitle" ColumnName="ModuleAssessmentTitle" />
+                <ScalarProperty Name="ModuleAssessmentDescription" ColumnName="ModuleAssessmentDescription" />
+                <ScalarProperty Name="PassingMark" ColumnName="PassingMark" />
+                <ScalarProperty Name="Weighting" ColumnName="Weighting" />
+                <ScalarProperty Name="AssessmentType" ColumnName="AssessmentType" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Result">
+            <EntityTypeMapping TypeName="STUDENT_GRADE_MANGERModel.Result">
+              <MappingFragment StoreEntitySet="Result">
+                <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+                <ScalarProperty Name="ModuleAssessmentID" ColumnName="ModuleAssessmentID" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="PredictedMark" ColumnName="PredictedMark" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student">
+            <EntityTypeMapping TypeName="STUDENT_GRADE_MANGERModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nic" ColumnName="Nic" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
