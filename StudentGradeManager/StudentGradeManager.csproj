@@ -75,6 +75,12 @@
     <Compile Include="StudentRegisterForm.Designer.cs">
       <DependentUpon>StudentRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SummaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SummaryForm.Designer.cs">
+      <DependentUpon>SummaryForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="StudentRegisterForm.resx">
       <DependentUpon>StudentRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryForm.resx">
+      <DependentUpon>SummaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\StudentServiceReference\service.wsdl" />
     <None Include="Connected Services\StudentServiceReference\service.xsd">

@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace StudentGradeManager
 {
-    public partial class MainForm : Form
+    public partial class AddNewCourseForm : Form
     {
-        public MainForm()
+        public AddNewCourseForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SummaryForm sm = new SummaryForm();
-            sm.Show();
-            sm.BringToFront();
         }
     }
 }
