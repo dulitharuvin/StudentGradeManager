@@ -16,7 +16,7 @@ namespace StudentGradeManagerService
         int SaveCourse(Course c);
 
         [OperationContract]
-        List<Course> DoWork();
+        List<Course> GetData();
 
     }
 }
