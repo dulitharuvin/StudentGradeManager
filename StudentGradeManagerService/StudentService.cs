@@ -15,26 +15,73 @@ namespace StudentGradeManagerService
         {
             student.CreatedDate = DateTime.Now;
             student.UpdatedDate = DateTime.Now;
-            using (var context = new STUDENT_GRADE_MANGEREntities())
+            try
             {
-                context.Student.Add(student);
-                return context.SaveChanges();
+                using (var context = new STUDENT_GRADE_MANGEREntities())
+                {
+                    context.Student.Add(student);
+                    return context.SaveChanges();
+                }
             }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return 0;
+            }
+
         }
 
         public bool StudentLoginValidate(string userName, string password)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var context = new STUDENT_GRADE_MANGEREntities())
+                {
+                    var student = context.Student.Where(st => string.Equals(st.UserName, userName) && string.Equals(st.Password, password))
+                        .FirstOrDefault();
+                    return student != null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return false;
+            }
         }
 
         public Student GetStudentById(Guid studentId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var context = new STUDENT_GRADE_MANGEREntities())
+                {
+                    var student = context.Student.Where(st => st.StudentID == studentId)
+                        .FirstOrDefault();
+                    return student;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
         }
 
         public IList<Course> GetStudentEnrolledCourses(Guid studentId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var context = new STUDENT_GRADE_MANGEREntities())
+                {
+                    var studentCourses = context.Course.Where(st => st.StudentID == studentId).ToList();
+                    return studentCourses;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
