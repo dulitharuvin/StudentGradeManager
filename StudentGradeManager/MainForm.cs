@@ -208,7 +208,9 @@ namespace StudentGradeManager
                 newAssessmentBtn.AutoSize = true;
                 newAssessmentBtn.Text = "Assessment +";
                 newAssessmentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                newAssessmentBtn.Click += NewAssessmentBtn_Click;
                 level4TableLayoutPanel.Controls.Add(newAssessmentBtn, 6, tableRow);
+               
                 tableRow++;
             }
         }
@@ -399,6 +401,7 @@ namespace StudentGradeManager
                 newAssessmentBtn.Text = "Assessment +";
                 newAssessmentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 level6TableLayoutPanel.Controls.Add(newAssessmentBtn, 6, tableRow);
+                newAssessmentBtn.Click += NewAssessmentBtn_Click;
                 tableRow++;
             }
         }
