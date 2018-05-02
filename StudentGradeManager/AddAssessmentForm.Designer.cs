@@ -40,7 +40,7 @@
             this.moduleAssessmentTitleTextBox = new System.Windows.Forms.TextBox();
             this.passingMarkTextBox = new System.Windows.Forms.TextBox();
             this.weightingTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.saveAssessmentsButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             assessmentTypeLabel = new System.Windows.Forms.Label();
             moduleAssessmentDescriptionLabel = new System.Windows.Forms.Label();
@@ -140,14 +140,15 @@
             this.weightingTextBox.Size = new System.Drawing.Size(243, 20);
             this.weightingTextBox.TabIndex = 10;
             // 
-            // button1
+            // saveAssessmentsButton
             // 
-            this.button1.Location = new System.Drawing.Point(501, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveAssessmentsButton.Location = new System.Drawing.Point(467, 167);
+            this.saveAssessmentsButton.Name = "saveAssessmentsButton";
+            this.saveAssessmentsButton.Size = new System.Drawing.Size(109, 23);
+            this.saveAssessmentsButton.TabIndex = 11;
+            this.saveAssessmentsButton.Text = "saveAssessments";
+            this.saveAssessmentsButton.UseVisualStyleBackColor = true;
+            this.saveAssessmentsButton.Click += new System.EventHandler(this.saveAssessmentsButton_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -168,7 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 508);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.saveAssessmentsButton);
             this.Controls.Add(assessmentTypeLabel);
             this.Controls.Add(this.assessmentTypeComboBox);
             this.Controls.Add(moduleAssessmentDescriptionLabel);
@@ -181,6 +182,7 @@
             this.Controls.Add(this.weightingTextBox);
             this.Name = "AddAssessmentForm";
             this.Text = "AddAssessmentForm";
+            this.Load += new System.EventHandler(this.AddAssessmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.moduleAssessmentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,7 +197,7 @@
         private System.Windows.Forms.TextBox moduleAssessmentTitleTextBox;
         private System.Windows.Forms.TextBox passingMarkTextBox;
         private System.Windows.Forms.TextBox weightingTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button saveAssessmentsButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
