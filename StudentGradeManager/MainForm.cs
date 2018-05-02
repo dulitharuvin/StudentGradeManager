@@ -1,4 +1,5 @@
-﻿using StudentDataModel.DTO;
+﻿using StudentDataModel;
+using StudentDataModel.DTO;
 using StudentGradeManager.CourseModuleServiceReference;
 using StudentGradeManager.StudentServiceReference;
 using System;
@@ -288,8 +289,38 @@ namespace StudentGradeManager
                 newAssessmentBtn.Text = "Assessment +";
                 newAssessmentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 level5TableLayoutPanel.Controls.Add(newAssessmentBtn, 6, tableRow);
+                newAssessmentBtn.Click += NewAssessmentBtn_Click;
                 tableRow++;
             }
+        }
+
+        private void NewAssessmentBtn_Click(object sender, EventArgs e)
+        {
+            int row = 0;
+            CourseModuleDTO cm = null;
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    level4TableLayoutPanel.GetRow((Button)sender);
+                    cm = level4CourseModuleList[row - 1];
+                    break;
+                case 1:
+                    level5TableLayoutPanel.GetRow((Button)sender);
+                    cm = level5CourseModuleList[row - 1];
+                    break;
+                case 2:
+                    level6TableLayoutPanel.GetRow((Button)sender);
+                    cm = level6CourseModuleList[row - 1];
+                    break;
+                default:
+                    level4TableLayoutPanel.GetRow((Button)sender);
+                    cm = level4CourseModuleList[row - 1];
+                    break;
+            }
+            var courseModuleEntity = AutoMapper.Mapper.Map<CourseModule>(cm);
+
+            AddAssessmentForm addAssessmentForm = new AddAssessmentForm(courseModuleEntity);
+            addAssessmentForm.ShowDialog();
         }
 
         public void ProcessLevel6Table()

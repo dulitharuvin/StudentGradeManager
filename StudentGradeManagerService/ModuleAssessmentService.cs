@@ -13,10 +13,14 @@ namespace StudentGradeManagerService
     {
         public List<ModuleAssessment> GetAssesmentsByModule(CourseModule c)
         {
-            using (var context = new STUDENT_GRADE_MANGEREntities())
+            if(c != null)
             {
-                return context.ModuleAssessment.Where(a => a.CourseModule.CourseModuleID.Equals(c.CourseModuleID)).ToList();
+                using (var context = new STUDENT_GRADE_MANGEREntities())
+                {
+                    return context.ModuleAssessment.Where(a => a.CourseModule.CourseModuleID.Equals(c.CourseModuleID)).ToList();
+                }
             }
+            return new List<ModuleAssessment>();
         }
 
         public List<ModuleAssessment> GetData()
