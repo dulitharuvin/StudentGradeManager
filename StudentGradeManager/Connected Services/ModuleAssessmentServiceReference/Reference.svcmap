@@ -24,6 +24,8 @@
   <Metadata>
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="418ec13b-69ba-4133-a058-9b8312c1ee44" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/ModuleAssessmentService/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="76994be2-21c8-414f-b834-6d3c23620a8d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/ModuleAssessmentService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="3e25f9d2-7a63-49b5-af1e-82de264ed0bb" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/ModuleAssessmentService/mex" />
+    <MetadataFile FileName="StudentDataModel.xsd" MetadataType="Schema" ID="9e4f396e-e420-4178-a031-902470e13f70" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/ModuleAssessmentService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -3,24 +3,64 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/StudentDataModel" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IModuleAssessmentService_DoWork_InputMessage">
-    <wsdl:part name="parameters" element="tns:DoWork" />
+  <wsdl:message name="IModuleAssessmentService_SaveAssessment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAssessment" />
   </wsdl:message>
-  <wsdl:message name="IModuleAssessmentService_DoWork_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  <wsdl:message name="IModuleAssessmentService_SaveAssessment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAssessmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModuleAssessmentService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IModuleAssessmentService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModuleAssessmentService_GetAssesmentsByModule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssesmentsByModule" />
+  </wsdl:message>
+  <wsdl:message name="IModuleAssessmentService_GetAssesmentsByModule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssesmentsByModuleResponse" />
   </wsdl:message>
   <wsdl:portType name="IModuleAssessmentService">
-    <wsdl:operation name="DoWork">
-      <wsdl:input wsaw:Action="http://tempuri.org/IModuleAssessmentService/DoWork" message="tns:IModuleAssessmentService_DoWork_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IModuleAssessmentService/DoWorkResponse" message="tns:IModuleAssessmentService_DoWork_OutputMessage" />
+    <wsdl:operation name="SaveAssessment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModuleAssessmentService/SaveAssessment" message="tns:IModuleAssessmentService_SaveAssessment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModuleAssessmentService/SaveAssessmentResponse" message="tns:IModuleAssessmentService_SaveAssessment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModuleAssessmentService/GetData" message="tns:IModuleAssessmentService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModuleAssessmentService/GetDataResponse" message="tns:IModuleAssessmentService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssesmentsByModule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModuleAssessmentService/GetAssesmentsByModule" message="tns:IModuleAssessmentService_GetAssesmentsByModule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModuleAssessmentService/GetAssesmentsByModuleResponse" message="tns:IModuleAssessmentService_GetAssesmentsByModule_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IModuleAssessmentService" type="tns:IModuleAssessmentService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="DoWork">
-      <soap:operation soapAction="http://tempuri.org/IModuleAssessmentService/DoWork" style="document" />
+    <wsdl:operation name="SaveAssessment">
+      <soap:operation soapAction="http://tempuri.org/IModuleAssessmentService/SaveAssessment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IModuleAssessmentService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssesmentsByModule">
+      <soap:operation soapAction="http://tempuri.org/IModuleAssessmentService/GetAssesmentsByModule" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

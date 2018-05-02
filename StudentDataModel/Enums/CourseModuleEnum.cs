@@ -14,5 +14,11 @@
             Level5 = 2,
             Level6 = 3
         }
+
+        public enum Assessments
+        {
+            Exam = 1,
+            Coursework = 2
+        }
     }
 }

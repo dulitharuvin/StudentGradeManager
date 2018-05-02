@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentDataModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,6 +13,12 @@ namespace StudentGradeManagerService
     public interface IModuleAssessmentService
     {
         [OperationContract]
-        void DoWork();
+        int SaveAssessment(ModuleAssessment r);
+
+        [OperationContract]
+        List<ModuleAssessment> GetData();
+
+        [OperationContract]
+        List<ModuleAssessment> GetAssesmentsByModule(CourseModule c);
     }
 }

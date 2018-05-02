@@ -177,6 +177,12 @@
     <None Include="Connected Services\ModuleAssessmentServiceReference\service.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ModuleAssessmentServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ModuleAssessmentServiceReference\StudentDataModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ResultServiceReference\service.wsdl" />
     <None Include="Connected Services\ResultServiceReference\service.xsd">
       <SubType>Designer</SubType>

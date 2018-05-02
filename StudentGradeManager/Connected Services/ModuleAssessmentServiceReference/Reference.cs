@@ -15,11 +15,23 @@ namespace StudentGradeManager.ModuleAssessmentServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ModuleAssessmentServiceReference.IModuleAssessmentService")]
     public interface IModuleAssessmentService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IModuleAssessmentService/DoWork", ReplyAction="http://tempuri.org/IModuleAssessmentService/DoWorkResponse")]
-        void DoWork();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IModuleAssessmentService/SaveAssessment", ReplyAction="http://tempuri.org/IModuleAssessmentService/SaveAssessmentResponse")]
+        int SaveAssessment(StudentDataModel.ModuleAssessment r);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IModuleAssessmentService/DoWork", ReplyAction="http://tempuri.org/IModuleAssessmentService/DoWorkResponse")]
-        System.Threading.Tasks.Task DoWorkAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IModuleAssessmentService/SaveAssessment", ReplyAction="http://tempuri.org/IModuleAssessmentService/SaveAssessmentResponse")]
+        System.Threading.Tasks.Task<int> SaveAssessmentAsync(StudentDataModel.ModuleAssessment r);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IModuleAssessmentService/GetData", ReplyAction="http://tempuri.org/IModuleAssessmentService/GetDataResponse")]
+        StudentDataModel.ModuleAssessment[] GetData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IModuleAssessmentService/GetData", ReplyAction="http://tempuri.org/IModuleAssessmentService/GetDataResponse")]
+        System.Threading.Tasks.Task<StudentDataModel.ModuleAssessment[]> GetDataAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IModuleAssessmentService/GetAssesmentsByModule", ReplyAction="http://tempuri.org/IModuleAssessmentService/GetAssesmentsByModuleResponse")]
+        StudentDataModel.ModuleAssessment[] GetAssesmentsByModule(StudentDataModel.CourseModule c);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IModuleAssessmentService/GetAssesmentsByModule", ReplyAction="http://tempuri.org/IModuleAssessmentService/GetAssesmentsByModuleResponse")]
+        System.Threading.Tasks.Task<StudentDataModel.ModuleAssessment[]> GetAssesmentsByModuleAsync(StudentDataModel.CourseModule c);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +61,28 @@ namespace StudentGradeManager.ModuleAssessmentServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void DoWork() {
-            base.Channel.DoWork();
+        public int SaveAssessment(StudentDataModel.ModuleAssessment r) {
+            return base.Channel.SaveAssessment(r);
         }
         
-        public System.Threading.Tasks.Task DoWorkAsync() {
-            return base.Channel.DoWorkAsync();
+        public System.Threading.Tasks.Task<int> SaveAssessmentAsync(StudentDataModel.ModuleAssessment r) {
+            return base.Channel.SaveAssessmentAsync(r);
+        }
+        
+        public StudentDataModel.ModuleAssessment[] GetData() {
+            return base.Channel.GetData();
+        }
+        
+        public System.Threading.Tasks.Task<StudentDataModel.ModuleAssessment[]> GetDataAsync() {
+            return base.Channel.GetDataAsync();
+        }
+        
+        public StudentDataModel.ModuleAssessment[] GetAssesmentsByModule(StudentDataModel.CourseModule c) {
+            return base.Channel.GetAssesmentsByModule(c);
+        }
+        
+        public System.Threading.Tasks.Task<StudentDataModel.ModuleAssessment[]> GetAssesmentsByModuleAsync(StudentDataModel.CourseModule c) {
+            return base.Channel.GetAssesmentsByModuleAsync(c);
         }
     }
 }
