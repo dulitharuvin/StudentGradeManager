@@ -59,10 +59,9 @@
             // 
             assessmentTypeLabel.AutoSize = true;
             assessmentTypeLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            assessmentTypeLabel.Location = new System.Drawing.Point(311, 33);
-            assessmentTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            assessmentTypeLabel.Location = new System.Drawing.Point(233, 27);
             assessmentTypeLabel.Name = "assessmentTypeLabel";
-            assessmentTypeLabel.Size = new System.Drawing.Size(157, 24);
+            assessmentTypeLabel.Size = new System.Drawing.Size(125, 19);
             assessmentTypeLabel.TabIndex = 1;
             assessmentTypeLabel.Text = "Assessment Type:";
             // 
@@ -70,10 +69,9 @@
             // 
             moduleAssessmentDescriptionLabel.AutoSize = true;
             moduleAssessmentDescriptionLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            moduleAssessmentDescriptionLabel.Location = new System.Drawing.Point(311, 76);
-            moduleAssessmentDescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            moduleAssessmentDescriptionLabel.Location = new System.Drawing.Point(233, 62);
             moduleAssessmentDescriptionLabel.Name = "moduleAssessmentDescriptionLabel";
-            moduleAssessmentDescriptionLabel.Size = new System.Drawing.Size(282, 24);
+            moduleAssessmentDescriptionLabel.Size = new System.Drawing.Size(222, 19);
             moduleAssessmentDescriptionLabel.TabIndex = 3;
             moduleAssessmentDescriptionLabel.Text = "Module Assessment Description:";
             // 
@@ -81,10 +79,9 @@
             // 
             moduleAssessmentTitleLabel.AutoSize = true;
             moduleAssessmentTitleLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            moduleAssessmentTitleLabel.Location = new System.Drawing.Point(311, 119);
-            moduleAssessmentTitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            moduleAssessmentTitleLabel.Location = new System.Drawing.Point(233, 97);
             moduleAssessmentTitleLabel.Name = "moduleAssessmentTitleLabel";
-            moduleAssessmentTitleLabel.Size = new System.Drawing.Size(225, 24);
+            moduleAssessmentTitleLabel.Size = new System.Drawing.Size(177, 19);
             moduleAssessmentTitleLabel.TabIndex = 5;
             moduleAssessmentTitleLabel.Text = "Module Assessment Title:";
             // 
@@ -92,10 +89,9 @@
             // 
             passingMarkLabel.AutoSize = true;
             passingMarkLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            passingMarkLabel.Location = new System.Drawing.Point(311, 162);
-            passingMarkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            passingMarkLabel.Location = new System.Drawing.Point(233, 132);
             passingMarkLabel.Name = "passingMarkLabel";
-            passingMarkLabel.Size = new System.Drawing.Size(124, 24);
+            passingMarkLabel.Size = new System.Drawing.Size(100, 19);
             passingMarkLabel.TabIndex = 7;
             passingMarkLabel.Text = "Passing Mark:";
             // 
@@ -103,10 +99,9 @@
             // 
             weightingLabel.AutoSize = true;
             weightingLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            weightingLabel.Location = new System.Drawing.Point(311, 207);
-            weightingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            weightingLabel.Location = new System.Drawing.Point(233, 168);
             weightingLabel.Name = "weightingLabel";
-            weightingLabel.Size = new System.Drawing.Size(98, 24);
+            weightingLabel.Size = new System.Drawing.Size(79, 19);
             weightingLabel.TabIndex = 9;
             weightingLabel.Text = "Weighting:";
             // 
@@ -114,58 +109,53 @@
             // 
             this.assessmentTypeComboBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assessmentTypeComboBox.FormattingEnabled = true;
-            this.assessmentTypeComboBox.Location = new System.Drawing.Point(606, 29);
-            this.assessmentTypeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.assessmentTypeComboBox.Location = new System.Drawing.Point(454, 24);
             this.assessmentTypeComboBox.Name = "assessmentTypeComboBox";
-            this.assessmentTypeComboBox.Size = new System.Drawing.Size(323, 32);
+            this.assessmentTypeComboBox.Size = new System.Drawing.Size(243, 27);
             this.assessmentTypeComboBox.TabIndex = 2;
             // 
             // moduleAssessmentDescriptionTextBox
             // 
             this.moduleAssessmentDescriptionTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleAssessmentDescriptionTextBox.Location = new System.Drawing.Point(606, 72);
-            this.moduleAssessmentDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.moduleAssessmentDescriptionTextBox.Location = new System.Drawing.Point(454, 58);
             this.moduleAssessmentDescriptionTextBox.Name = "moduleAssessmentDescriptionTextBox";
-            this.moduleAssessmentDescriptionTextBox.Size = new System.Drawing.Size(323, 32);
+            this.moduleAssessmentDescriptionTextBox.Size = new System.Drawing.Size(243, 27);
             this.moduleAssessmentDescriptionTextBox.TabIndex = 4;
             // 
             // moduleAssessmentTitleTextBox
             // 
             this.moduleAssessmentTitleTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleAssessmentTitleTextBox.Location = new System.Drawing.Point(606, 115);
-            this.moduleAssessmentTitleTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.moduleAssessmentTitleTextBox.Location = new System.Drawing.Point(454, 93);
             this.moduleAssessmentTitleTextBox.Name = "moduleAssessmentTitleTextBox";
-            this.moduleAssessmentTitleTextBox.Size = new System.Drawing.Size(323, 32);
+            this.moduleAssessmentTitleTextBox.Size = new System.Drawing.Size(243, 27);
             this.moduleAssessmentTitleTextBox.TabIndex = 6;
             // 
             // passingMarkTextBox
             // 
             this.passingMarkTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passingMarkTextBox.Location = new System.Drawing.Point(606, 158);
-            this.passingMarkTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passingMarkTextBox.Location = new System.Drawing.Point(454, 128);
             this.passingMarkTextBox.Name = "passingMarkTextBox";
-            this.passingMarkTextBox.Size = new System.Drawing.Size(323, 32);
+            this.passingMarkTextBox.Size = new System.Drawing.Size(243, 27);
             this.passingMarkTextBox.TabIndex = 8;
             // 
             // weightingTextBox
             // 
             this.weightingTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weightingTextBox.Location = new System.Drawing.Point(606, 203);
-            this.weightingTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.weightingTextBox.Location = new System.Drawing.Point(454, 165);
             this.weightingTextBox.Name = "weightingTextBox";
-            this.weightingTextBox.Size = new System.Drawing.Size(323, 32);
+            this.weightingTextBox.Size = new System.Drawing.Size(243, 27);
             this.weightingTextBox.TabIndex = 10;
             // 
             // submitBtn
             // 
             this.submitBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.Location = new System.Drawing.Point(738, 254);
-            this.submitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.submitBtn.Location = new System.Drawing.Point(554, 206);
             this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(192, 28);
+            this.submitBtn.Size = new System.Drawing.Size(144, 23);
             this.submitBtn.TabIndex = 11;
             this.submitBtn.Text = "Add Assessment";
             this.submitBtn.UseVisualStyleBackColor = true;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
             // assessmentTableLayoutPanel
             // 
@@ -187,11 +177,12 @@
             this.assessmentTableLayoutPanel.Controls.Add(this.label6, 4, 0);
             this.assessmentTableLayoutPanel.Controls.Add(this.label7, 5, 0);
             this.assessmentTableLayoutPanel.Controls.Add(this.label8, 6, 0);
-            this.assessmentTableLayoutPanel.Location = new System.Drawing.Point(7, 320);
+            this.assessmentTableLayoutPanel.Location = new System.Drawing.Point(5, 260);
+            this.assessmentTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assessmentTableLayoutPanel.Name = "assessmentTableLayoutPanel";
             this.assessmentTableLayoutPanel.RowCount = 1;
-            this.assessmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 456F));
-            this.assessmentTableLayoutPanel.Size = new System.Drawing.Size(1212, 349);
+            this.assessmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 370F));
+            this.assessmentTableLayoutPanel.Size = new System.Drawing.Size(909, 284);
             this.assessmentTableLayoutPanel.TabIndex = 12;
             // 
             // label4
@@ -200,9 +191,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(443, 0);
+            this.label4.Location = new System.Drawing.Point(332, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 19);
+            this.label4.Size = new System.Drawing.Size(119, 15);
             this.label4.TabIndex = 2;
             this.label4.Text = "Type";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -213,9 +205,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(223, 0);
+            this.label3.Location = new System.Drawing.Point(167, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 19);
+            this.label3.Size = new System.Drawing.Size(161, 15);
             this.label3.TabIndex = 1;
             this.label3.Text = "Description";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,9 +219,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(2, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 19);
+            this.label2.Size = new System.Drawing.Size(161, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Titel";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -239,9 +233,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(608, 0);
+            this.label5.Location = new System.Drawing.Point(455, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 19);
+            this.label5.Size = new System.Drawing.Size(96, 15);
             this.label5.TabIndex = 3;
             this.label5.Text = "Passing Mark";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,9 +247,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(742, 0);
+            this.label6.Location = new System.Drawing.Point(555, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 19);
+            this.label6.Size = new System.Drawing.Size(143, 15);
             this.label6.TabIndex = 4;
             this.label6.Text = "Weighting";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,9 +261,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(938, 0);
+            this.label7.Location = new System.Drawing.Point(702, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 19);
+            this.label7.Size = new System.Drawing.Size(78, 15);
             this.label7.TabIndex = 5;
             this.label7.Text = "Result";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,17 +275,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(1048, 0);
+            this.label8.Location = new System.Drawing.Point(784, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(161, 19);
+            this.label8.Size = new System.Drawing.Size(123, 15);
             this.label8.TabIndex = 6;
             this.label8.Text = "Add Result";
             // 
             // AddAssessmentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 673);
+            this.ClientSize = new System.Drawing.Size(920, 547);
             this.Controls.Add(this.assessmentTableLayoutPanel);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(assessmentTypeLabel);
@@ -301,7 +299,6 @@
             this.Controls.Add(this.passingMarkTextBox);
             this.Controls.Add(weightingLabel);
             this.Controls.Add(this.weightingTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddAssessmentForm";
             this.Text = "AddAssessmentForm";
             this.assessmentTableLayoutPanel.ResumeLayout(false);

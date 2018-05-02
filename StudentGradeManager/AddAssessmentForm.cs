@@ -31,6 +31,7 @@ namespace StudentGradeManager
                 CourseModule = courseModule,
                 ModuleAssessmentTitle = moduleAssessmentTitleTextBox.Text.Trim(),
                 ModuleAssessmentDescription = moduleAssessmentDescriptionTextBox.Text.Trim(),
+                Weighting = double.Parse(weightingTextBox.Text.Trim()),
                 AssessmentType = (int)Enum.Parse(typeof(CourseLevel), assessmentTypeComboBox.SelectedItem.ToString())
             };
 
@@ -75,6 +76,11 @@ namespace StudentGradeManager
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void submitBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
