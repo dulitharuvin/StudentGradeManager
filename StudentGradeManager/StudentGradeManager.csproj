@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAssessmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAssessmentForm.Designer.cs">
+      <DependentUpon>AddAssessmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
       <DependentUpon>SummaryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Utilities.cs" />
+    <EmbeddedResource Include="AddAssessmentForm.resx">
+      <DependentUpon>AddAssessmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNewCourseForm.resx">
       <DependentUpon>AddNewCourseForm.cs</DependentUpon>
     </EmbeddedResource>
