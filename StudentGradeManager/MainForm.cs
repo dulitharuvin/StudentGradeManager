@@ -208,11 +208,22 @@ namespace StudentGradeManager
                 newAssessmentBtn.AutoSize = true;
                 newAssessmentBtn.Text = "Assessment +";
                 newAssessmentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                newAssessmentBtn.Click += NewAssessmentBtn_Click;
+                newAssessmentBtn.Click += NewAssessmen4tBtn_Click;
                 level4TableLayoutPanel.Controls.Add(newAssessmentBtn, 6, tableRow);
                
                 tableRow++;
             }
+        }
+
+        private void NewAssessmen4tBtn_Click(object sender, EventArgs e)
+        {
+            int row = level4TableLayoutPanel.GetRow((Button)sender);
+            CourseModuleDTO cm = level4CourseModuleList[row - 1]; ;
+
+            var courseModuleEntity = AutoMapper.Mapper.Map<CourseModule>(cm);
+
+            AddAssessmentForm addAssessmentForm = new AddAssessmentForm(courseModuleEntity);
+            addAssessmentForm.ShowDialog();
         }
 
         public void ProcessLevel5Table()
@@ -291,34 +302,27 @@ namespace StudentGradeManager
                 newAssessmentBtn.Text = "Assessment +";
                 newAssessmentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 level5TableLayoutPanel.Controls.Add(newAssessmentBtn, 6, tableRow);
-                newAssessmentBtn.Click += NewAssessmentBtn_Click;
+                newAssessmentBtn.Click += NewAssessment5Btn_Click;
                 tableRow++;
             }
         }
 
-        private void NewAssessmentBtn_Click(object sender, EventArgs e)
+        private void NewAssessment5Btn_Click(object sender, EventArgs e)
         {
-            int row = 0;
-            CourseModuleDTO cm = null;
-            switch (tabControl1.SelectedIndex)
-            {
-                case 0:
-                    level4TableLayoutPanel.GetRow((Button)sender);
-                    cm = level4CourseModuleList[row - 1];
-                    break;
-                case 1:
-                    level5TableLayoutPanel.GetRow((Button)sender);
-                    cm = level5CourseModuleList[row - 1];
-                    break;
-                case 2:
-                    level6TableLayoutPanel.GetRow((Button)sender);
-                    cm = level6CourseModuleList[row - 1];
-                    break;
-                default:
-                    level4TableLayoutPanel.GetRow((Button)sender);
-                    cm = level4CourseModuleList[row - 1];
-                    break;
-            }
+            int row = level5TableLayoutPanel.GetRow((Button)sender);
+            CourseModuleDTO cm = level5CourseModuleList[row - 1]; ;
+
+            var courseModuleEntity = AutoMapper.Mapper.Map<CourseModule>(cm);
+
+            AddAssessmentForm addAssessmentForm = new AddAssessmentForm(courseModuleEntity);
+            addAssessmentForm.ShowDialog();
+        }
+
+        private void NewAssessmentBtn6_Click(object sender, EventArgs e)
+        {
+            int row = level6TableLayoutPanel.GetRow((Button)sender);
+            CourseModuleDTO cm = level6CourseModuleList[row - 1]; ;
+        
             var courseModuleEntity = AutoMapper.Mapper.Map<CourseModule>(cm);
 
             AddAssessmentForm addAssessmentForm = new AddAssessmentForm(courseModuleEntity);
@@ -401,7 +405,7 @@ namespace StudentGradeManager
                 newAssessmentBtn.Text = "Assessment +";
                 newAssessmentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 level6TableLayoutPanel.Controls.Add(newAssessmentBtn, 6, tableRow);
-                newAssessmentBtn.Click += NewAssessmentBtn_Click;
+                newAssessmentBtn.Click += NewAssessmentBtn6_Click;
                 tableRow++;
             }
         }
