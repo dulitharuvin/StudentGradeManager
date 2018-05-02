@@ -49,6 +49,7 @@ namespace StudentGradeManager
         private void AddAssessmentForm_Load(object sender, EventArgs e)
         {
             SetAssesmentCombobox();
+            LoadAssessmentFromDB();
         }
 
         private void SetAssesmentCombobox()
@@ -78,9 +79,70 @@ namespace StudentGradeManager
             }
         }
 
-        private void submitBtn_Click(object sender, EventArgs e)
+        private void LoadAssessmentFromDB()
         {
+            List<ModuleAssessment> maList = courseAssessmentService.GetData().ToList();
+            var tableRow = 1;
+            assessmentTableLayoutPanel.RowCount = tableRow + 1;
+            foreach (ModuleAssessment assessment in maList)
+            {
+                assessmentTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
 
+                Label titleLabel = new Label();
+                assessmentTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.18F));
+                titleLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+                titleLabel.AutoSize = true;
+                titleLabel.AutoEllipsis = true;
+                titleLabel.TextAlign = ContentAlignment.MiddleLeft;
+                titleLabel.Text = assessment.ModuleAssessmentTitle;
+                assessmentTableLayoutPanel.Controls.Add(titleLabel, 0, tableRow);
+
+                Label descriptionLabel = new Label();
+                assessmentTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.18F));
+                descriptionLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+                descriptionLabel.AutoSize = true;
+                descriptionLabel.AutoEllipsis = true;
+                descriptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+                descriptionLabel.Text = assessment.ModuleAssessmentDescription;
+                assessmentTableLayoutPanel.Controls.Add(descriptionLabel, 1, tableRow);
+
+                Label typeLabel = new Label();
+                assessmentTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.64F));
+                typeLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+                typeLabel.AutoSize = true;
+                typeLabel.AutoEllipsis = true;
+                typeLabel.TextAlign = ContentAlignment.MiddleLeft;
+                typeLabel.Text = assessment.AssessmentType + "";
+                assessmentTableLayoutPanel.Controls.Add(typeLabel, 2, tableRow);
+
+                Label weightingLabel = new Label();
+                assessmentTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.09F));
+                weightingLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+                weightingLabel.AutoSize = true;
+                weightingLabel.AutoEllipsis = true;
+                weightingLabel.TextAlign = ContentAlignment.MiddleLeft;
+                weightingLabel.Text = assessment.Weighting.ToString();
+                assessmentTableLayoutPanel.Controls.Add(weightingLabel, 3, tableRow);
+
+                Label resultsLabel = new Label();
+                assessmentTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.18F));
+                resultsLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+                resultsLabel.AutoSize = true;
+                resultsLabel.AutoEllipsis = true;
+                resultsLabel.TextAlign = ContentAlignment.MiddleLeft;
+                resultsLabel.Text = "Results here";
+                assessmentTableLayoutPanel.Controls.Add(resultsLabel, 4, tableRow);
+
+
+                Button newAssessmentBtn = new Button();
+                assessmentTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.64F));
+                newAssessmentBtn.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+                newAssessmentBtn.AutoSize = true;
+                newAssessmentBtn.Text = "Results +";
+                newAssessmentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                assessmentTableLayoutPanel.Controls.Add(newAssessmentBtn, 6, tableRow);
+                tableRow++;
+            }
         }
     }
 }

@@ -155,7 +155,7 @@
             this.submitBtn.TabIndex = 11;
             this.submitBtn.Text = "Add Assessment";
             this.submitBtn.UseVisualStyleBackColor = true;
-            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
+            this.submitBtn.Click += new System.EventHandler(this.saveAssessmentsButton_Click);
             // 
             // assessmentTableLayoutPanel
             // 
