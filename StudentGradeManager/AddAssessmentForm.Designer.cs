@@ -269,7 +269,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 19);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Type";
+            this.label7.Text = "Result";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
@@ -282,7 +282,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(161, 19);
             this.label8.TabIndex = 6;
-            this.label8.Text = "Assessment +";
+            this.label8.Text = "Add Result";
             // 
             // AddAssessmentForm
             // 
