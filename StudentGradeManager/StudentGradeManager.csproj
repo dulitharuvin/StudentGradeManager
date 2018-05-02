@@ -56,6 +56,12 @@
     <Compile Include="AddNewCourseForm.Designer.cs">
       <DependentUpon>AddNewCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddNewCourseModuleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewCourseModuleForm.Designer.cs">
+      <DependentUpon>AddNewCourseModuleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\CourseModuleServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,8 +113,12 @@
     <Compile Include="SummaryForm.Designer.cs">
       <DependentUpon>SummaryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Utilities.cs" />
     <EmbeddedResource Include="AddNewCourseForm.resx">
       <DependentUpon>AddNewCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewCourseModuleForm.resx">
+      <DependentUpon>AddNewCourseModuleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -136,6 +146,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\CourseModuleServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CourseModuleServiceReference\StudentDataModel.DTO.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\CourseModuleServiceReference\StudentDataModel.xsd">
@@ -189,6 +202,7 @@
     <None Include="Properties\DataSources\StudentDataModel.Course.datasource" />
     <None Include="Properties\DataSources\StudentDataModel.CourseModule.datasource" />
     <None Include="Properties\DataSources\StudentDataModel.DTO.CourseDTO.datasource" />
+    <None Include="Properties\DataSources\StudentDataModel.DTO.CourseModuleDTO.datasource" />
     <None Include="Properties\DataSources\StudentDataModel.DTO.StudentDTO.datasource" />
     <None Include="Properties\DataSources\StudentDataModel.ModuleAssessment.datasource" />
     <None Include="Properties\DataSources\StudentDataModel.Result.datasource" />

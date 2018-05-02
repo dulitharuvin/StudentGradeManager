@@ -62,7 +62,11 @@
       <DependentUpon>StudentGradeManager.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CourseDTO.cs" />
+    <Compile Include="DTO\CourseModuleDTO.cs" />
+    <Compile Include="DTO\ModuleAssessmentDTO.cs" />
+    <Compile Include="DTO\ResultDTO.cs" />
     <Compile Include="DTO\StudentDTO.cs" />
+    <Compile Include="Enums\CourseModuleEnum.cs" />
     <Compile Include="ModuleAssessment.cs">
       <DependentUpon>StudentGradeManager.tt</DependentUpon>
     </Compile>
@@ -117,5 +121,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

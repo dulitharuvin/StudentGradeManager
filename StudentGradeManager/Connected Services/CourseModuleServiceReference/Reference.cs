@@ -15,23 +15,29 @@ namespace StudentGradeManager.CourseModuleServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CourseModuleServiceReference.ICourseModuleService")]
     public interface ICourseModuleService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/SaveModule", ReplyAction="http://tempuri.org/ICourseModuleService/SaveModuleResponse")]
-        int SaveModule(StudentDataModel.CourseModule m);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/SaveCourseModule", ReplyAction="http://tempuri.org/ICourseModuleService/SaveCourseModuleResponse")]
+        int SaveCourseModule(StudentDataModel.CourseModule m);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/SaveModule", ReplyAction="http://tempuri.org/ICourseModuleService/SaveModuleResponse")]
-        System.Threading.Tasks.Task<int> SaveModuleAsync(StudentDataModel.CourseModule m);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/SaveCourseModule", ReplyAction="http://tempuri.org/ICourseModuleService/SaveCourseModuleResponse")]
+        System.Threading.Tasks.Task<int> SaveCourseModuleAsync(StudentDataModel.CourseModule m);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/GetData", ReplyAction="http://tempuri.org/ICourseModuleService/GetDataResponse")]
-        StudentDataModel.CourseModule[] GetData();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/GetCourseModules", ReplyAction="http://tempuri.org/ICourseModuleService/GetCourseModulesResponse")]
+        StudentDataModel.CourseModule[] GetCourseModules();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/GetData", ReplyAction="http://tempuri.org/ICourseModuleService/GetDataResponse")]
-        System.Threading.Tasks.Task<StudentDataModel.CourseModule[]> GetDataAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/GetCourseModules", ReplyAction="http://tempuri.org/ICourseModuleService/GetCourseModulesResponse")]
+        System.Threading.Tasks.Task<StudentDataModel.CourseModule[]> GetCourseModulesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/GetModulesByCourse", ReplyAction="http://tempuri.org/ICourseModuleService/GetModulesByCourseResponse")]
         StudentDataModel.CourseModule[] GetModulesByCourse(StudentDataModel.Course m);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/GetModulesByCourse", ReplyAction="http://tempuri.org/ICourseModuleService/GetModulesByCourseResponse")]
         System.Threading.Tasks.Task<StudentDataModel.CourseModule[]> GetModulesByCourseAsync(StudentDataModel.Course m);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/GetModulesByCourseAndLevel", ReplyAction="http://tempuri.org/ICourseModuleService/GetModulesByCourseAndLevelResponse")]
+        StudentDataModel.DTO.CourseModuleDTO[] GetModulesByCourseAndLevel(System.Guid courseId, int moduleLevel);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseModuleService/GetModulesByCourseAndLevel", ReplyAction="http://tempuri.org/ICourseModuleService/GetModulesByCourseAndLevelResponse")]
+        System.Threading.Tasks.Task<StudentDataModel.DTO.CourseModuleDTO[]> GetModulesByCourseAndLevelAsync(System.Guid courseId, int moduleLevel);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -61,20 +67,20 @@ namespace StudentGradeManager.CourseModuleServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public int SaveModule(StudentDataModel.CourseModule m) {
-            return base.Channel.SaveModule(m);
+        public int SaveCourseModule(StudentDataModel.CourseModule m) {
+            return base.Channel.SaveCourseModule(m);
         }
         
-        public System.Threading.Tasks.Task<int> SaveModuleAsync(StudentDataModel.CourseModule m) {
-            return base.Channel.SaveModuleAsync(m);
+        public System.Threading.Tasks.Task<int> SaveCourseModuleAsync(StudentDataModel.CourseModule m) {
+            return base.Channel.SaveCourseModuleAsync(m);
         }
         
-        public StudentDataModel.CourseModule[] GetData() {
-            return base.Channel.GetData();
+        public StudentDataModel.CourseModule[] GetCourseModules() {
+            return base.Channel.GetCourseModules();
         }
         
-        public System.Threading.Tasks.Task<StudentDataModel.CourseModule[]> GetDataAsync() {
-            return base.Channel.GetDataAsync();
+        public System.Threading.Tasks.Task<StudentDataModel.CourseModule[]> GetCourseModulesAsync() {
+            return base.Channel.GetCourseModulesAsync();
         }
         
         public StudentDataModel.CourseModule[] GetModulesByCourse(StudentDataModel.Course m) {
@@ -83,6 +89,14 @@ namespace StudentGradeManager.CourseModuleServiceReference {
         
         public System.Threading.Tasks.Task<StudentDataModel.CourseModule[]> GetModulesByCourseAsync(StudentDataModel.Course m) {
             return base.Channel.GetModulesByCourseAsync(m);
+        }
+        
+        public StudentDataModel.DTO.CourseModuleDTO[] GetModulesByCourseAndLevel(System.Guid courseId, int moduleLevel) {
+            return base.Channel.GetModulesByCourseAndLevel(courseId, moduleLevel);
+        }
+        
+        public System.Threading.Tasks.Task<StudentDataModel.DTO.CourseModuleDTO[]> GetModulesByCourseAndLevelAsync(System.Guid courseId, int moduleLevel) {
+            return base.Channel.GetModulesByCourseAndLevelAsync(courseId, moduleLevel);
         }
     }
 }

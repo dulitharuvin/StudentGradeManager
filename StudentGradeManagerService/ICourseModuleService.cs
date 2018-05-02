@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using StudentDataModel;
+using StudentDataModel.DTO;
 
 namespace StudentGradeManagerService
 {
@@ -13,12 +14,15 @@ namespace StudentGradeManagerService
     public interface ICourseModuleService
     {
         [OperationContract]
-        int SaveModule(CourseModule m);
+        int SaveCourseModule(CourseModule m);
 
         [OperationContract]
-        List<CourseModule> GetData();
+        List<CourseModule> GetCourseModules();
 
         [OperationContract]
         List<CourseModule> GetModulesByCourse(Course m);
+
+        [OperationContract]
+        List<CourseModuleDTO> GetModulesByCourseAndLevel(Guid courseId, int moduleLevel);
     }
 }

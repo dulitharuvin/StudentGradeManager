@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/StudentDataModel.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/StudentDataModel.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfCourseModuleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CourseModuleDTO" nillable="true" type="tns:CourseModuleDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCourseModuleDTO" nillable="true" type="tns:ArrayOfCourseModuleDTO" />
+  <xs:complexType name="CourseModuleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContributedToFinal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CourseID" type="ser:guid" />
+      <xs:element minOccurs="0" name="CourseModuleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseModuleCreditValue" type="xs:double" />
+      <xs:element minOccurs="0" name="CourseModuleDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseModuleID" type="ser:guid" />
+      <xs:element minOccurs="0" name="CourseModuleTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expired" type="xs:int" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="ModuleType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CourseModuleDTO" nillable="true" type="tns:CourseModuleDTO" />
+</xs:schema>

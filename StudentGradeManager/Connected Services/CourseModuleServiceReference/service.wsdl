@@ -5,19 +5,20 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/StudentDataModel" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/StudentDataModel.DTO" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ICourseModuleService_SaveModule_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveModule" />
+  <wsdl:message name="ICourseModuleService_SaveCourseModule_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCourseModule" />
   </wsdl:message>
-  <wsdl:message name="ICourseModuleService_SaveModule_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveModuleResponse" />
+  <wsdl:message name="ICourseModuleService_SaveCourseModule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCourseModuleResponse" />
   </wsdl:message>
-  <wsdl:message name="ICourseModuleService_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
+  <wsdl:message name="ICourseModuleService_GetCourseModules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseModules" />
   </wsdl:message>
-  <wsdl:message name="ICourseModuleService_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  <wsdl:message name="ICourseModuleService_GetCourseModules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseModulesResponse" />
   </wsdl:message>
   <wsdl:message name="ICourseModuleService_GetModulesByCourse_InputMessage">
     <wsdl:part name="parameters" element="tns:GetModulesByCourse" />
@@ -25,24 +26,34 @@
   <wsdl:message name="ICourseModuleService_GetModulesByCourse_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetModulesByCourseResponse" />
   </wsdl:message>
+  <wsdl:message name="ICourseModuleService_GetModulesByCourseAndLevel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModulesByCourseAndLevel" />
+  </wsdl:message>
+  <wsdl:message name="ICourseModuleService_GetModulesByCourseAndLevel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModulesByCourseAndLevelResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICourseModuleService">
-    <wsdl:operation name="SaveModule">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICourseModuleService/SaveModule" message="tns:ICourseModuleService_SaveModule_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICourseModuleService/SaveModuleResponse" message="tns:ICourseModuleService_SaveModule_OutputMessage" />
+    <wsdl:operation name="SaveCourseModule">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseModuleService/SaveCourseModule" message="tns:ICourseModuleService_SaveCourseModule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseModuleService/SaveCourseModuleResponse" message="tns:ICourseModuleService_SaveCourseModule_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICourseModuleService/GetData" message="tns:ICourseModuleService_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICourseModuleService/GetDataResponse" message="tns:ICourseModuleService_GetData_OutputMessage" />
+    <wsdl:operation name="GetCourseModules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseModuleService/GetCourseModules" message="tns:ICourseModuleService_GetCourseModules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseModuleService/GetCourseModulesResponse" message="tns:ICourseModuleService_GetCourseModules_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetModulesByCourse">
       <wsdl:input wsaw:Action="http://tempuri.org/ICourseModuleService/GetModulesByCourse" message="tns:ICourseModuleService_GetModulesByCourse_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICourseModuleService/GetModulesByCourseResponse" message="tns:ICourseModuleService_GetModulesByCourse_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetModulesByCourseAndLevel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseModuleService/GetModulesByCourseAndLevel" message="tns:ICourseModuleService_GetModulesByCourseAndLevel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseModuleService/GetModulesByCourseAndLevelResponse" message="tns:ICourseModuleService_GetModulesByCourseAndLevel_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICourseModuleService" type="tns:ICourseModuleService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="SaveModule">
-      <soap:operation soapAction="http://tempuri.org/ICourseModuleService/SaveModule" style="document" />
+    <wsdl:operation name="SaveCourseModule">
+      <soap:operation soapAction="http://tempuri.org/ICourseModuleService/SaveCourseModule" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -50,8 +61,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/ICourseModuleService/GetData" style="document" />
+    <wsdl:operation name="GetCourseModules">
+      <soap:operation soapAction="http://tempuri.org/ICourseModuleService/GetCourseModules" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -61,6 +72,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetModulesByCourse">
       <soap:operation soapAction="http://tempuri.org/ICourseModuleService/GetModulesByCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModulesByCourseAndLevel">
+      <soap:operation soapAction="http://tempuri.org/ICourseModuleService/GetModulesByCourseAndLevel" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

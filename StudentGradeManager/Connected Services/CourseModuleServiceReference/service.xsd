@@ -1,29 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/StudentDataModel" />
-  <xs:element name="SaveModule">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/StudentDataModel.DTO" />
+  <xs:element name="SaveCourseModule">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/StudentDataModel" minOccurs="0" name="m" nillable="true" type="q1:CourseModule" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SaveModuleResponse">
+  <xs:element name="SaveCourseModuleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SaveModuleResult" type="xs:int" />
+        <xs:element minOccurs="0" name="SaveCourseModuleResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetData">
+  <xs:element name="GetCourseModules">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetDataResponse">
+  <xs:element name="GetCourseModulesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/StudentDataModel" minOccurs="0" name="GetDataResult" nillable="true" type="q2:ArrayOfCourseModule" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/StudentDataModel" minOccurs="0" name="GetCourseModulesResult" nillable="true" type="q2:ArrayOfCourseModule" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -38,6 +40,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/StudentDataModel" minOccurs="0" name="GetModulesByCourseResult" nillable="true" type="q4:ArrayOfCourseModule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModulesByCourseAndLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="courseId" type="q5:guid" />
+        <xs:element minOccurs="0" name="moduleLevel" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModulesByCourseAndLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/StudentDataModel.DTO" minOccurs="0" name="GetModulesByCourseAndLevelResult" nillable="true" type="q6:ArrayOfCourseModuleDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

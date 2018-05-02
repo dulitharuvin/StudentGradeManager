@@ -26,6 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7ec0d7b1-58ec-4e53-acfb-f8c4ce701c98" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/CourseModuleService/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="747487a3-b8b0-45d8-b16f-a7af566396b0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/CourseModuleService/mex" />
     <MetadataFile FileName="StudentDataModel.xsd" MetadataType="Schema" ID="4c0bb516-c3ae-4e63-97e6-ff2611d29ea2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/CourseModuleService/mex" />
+    <MetadataFile FileName="StudentDataModel.DTO.xsd" MetadataType="Schema" ID="8b10430a-d602-4ecf-95dd-88ee38e566b2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/StudentGradeManagerService/CourseModuleService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

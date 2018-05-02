@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label courseDescriptionLabel;
             System.Windows.Forms.Label courseTitleLabel;
-            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.courseTitleTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,12 +37,7 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             courseDescriptionLabel = new System.Windows.Forms.Label();
             courseTitleLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // courseBindingSource
-            // 
-            this.courseBindingSource.DataSource = typeof(StudentDataModel.Course);
             // 
             // courseDescriptionLabel
             // 
@@ -56,16 +49,6 @@
             courseDescriptionLabel.TabIndex = 1;
             courseDescriptionLabel.Text = "Course Description:";
             // 
-            // courseDescriptionTextBox
-            // 
-            this.courseDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.courseBindingSource, "CourseDescription", true));
-            this.courseDescriptionTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseDescriptionTextBox.Location = new System.Drawing.Point(513, 274);
-            this.courseDescriptionTextBox.Multiline = true;
-            this.courseDescriptionTextBox.Name = "courseDescriptionTextBox";
-            this.courseDescriptionTextBox.Size = new System.Drawing.Size(337, 99);
-            this.courseDescriptionTextBox.TabIndex = 2;
-            // 
             // courseTitleLabel
             // 
             courseTitleLabel.AutoSize = true;
@@ -76,14 +59,22 @@
             courseTitleLabel.TabIndex = 3;
             courseTitleLabel.Text = "Course Title:";
             // 
+            // courseDescriptionTextBox
+            // 
+            this.courseDescriptionTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseDescriptionTextBox.Location = new System.Drawing.Point(513, 274);
+            this.courseDescriptionTextBox.Multiline = true;
+            this.courseDescriptionTextBox.Name = "courseDescriptionTextBox";
+            this.courseDescriptionTextBox.Size = new System.Drawing.Size(337, 99);
+            this.courseDescriptionTextBox.TabIndex = 1;
+            // 
             // courseTitleTextBox
             // 
-            this.courseTitleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.courseBindingSource, "CourseTitle", true));
             this.courseTitleTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseTitleTextBox.Location = new System.Drawing.Point(513, 171);
             this.courseTitleTextBox.Name = "courseTitleTextBox";
             this.courseTitleTextBox.Size = new System.Drawing.Size(337, 32);
-            this.courseTitleTextBox.TabIndex = 4;
+            this.courseTitleTextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -103,7 +94,7 @@
             this.submitBtn.Location = new System.Drawing.Point(635, 435);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(87, 34);
-            this.submitBtn.TabIndex = 6;
+            this.submitBtn.TabIndex = 2;
             this.submitBtn.Text = "Submit";
             this.submitBtn.UseVisualStyleBackColor = true;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
@@ -115,7 +106,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(763, 435);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(87, 34);
-            this.cancelBtn.TabIndex = 7;
+            this.cancelBtn.TabIndex = 3;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
@@ -134,16 +125,13 @@
             this.Controls.Add(this.courseTitleTextBox);
             this.Name = "AddNewCourseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddNewCourseForm";
-            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
+            this.Text = "Add New Course";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource courseBindingSource;
         private System.Windows.Forms.TextBox courseDescriptionTextBox;
         private System.Windows.Forms.TextBox courseTitleTextBox;
         private System.Windows.Forms.Label label1;

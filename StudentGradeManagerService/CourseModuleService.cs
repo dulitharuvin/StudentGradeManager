@@ -1,17 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 using StudentDataModel;
+using StudentDataModel.DTO;
+using StudentDataModel.AutoMapper;
+using AutoMapper.QueryableExtensions;
 
 namespace StudentGradeManagerService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ModuleService" in both code and config file together.
     public class CourseModuleService : ICourseModuleService
     {
-        public List<CourseModule> GetData()
+        public int SaveCourseModule(CourseModule m)
+        {
+            m.CreatedDate = DateTime.Now;
+            m.UpdatedDate = DateTime.Now;
+            try
+            {
+                using (var context = new STUDENT_GRADE_MANGEREntities())
+                {
+                    context.CourseModule.Add(m);
+                    return context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return 0;
+            }
+        }
+
+        public List<CourseModule> GetCourseModules()
         {
             using (var context = new STUDENT_GRADE_MANGEREntities())
             {
@@ -27,14 +46,24 @@ namespace StudentGradeManagerService
             }
         }
 
-        public int SaveModule(CourseModule m)
+        public List<CourseModuleDTO> GetModulesByCourseAndLevel(Guid courseId, int moduleLevel)
         {
-            m.CreatedDate = DateTime.Now;
-            m.UpdatedDate = DateTime.Now;
-            using (var context = new STUDENT_GRADE_MANGEREntities())
+            AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperProfile>());
+
+            try
             {
-                context.CourseModule.Add(m);
-                return context.SaveChanges();
+                using (var context = new STUDENT_GRADE_MANGEREntities())
+                {
+                    return context.CourseModule.
+                        Where(a => a.Course.CourseID.Equals(courseId) && a.Level == moduleLevel)
+                        .ProjectTo<CourseModuleDTO>()
+                        .ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
             }
         }
     }

@@ -9,8 +9,10 @@ namespace StudentDataModel.AutoMapper
         {
             CreateMap<Student, StudentDTO>();
             CreateMap<Course, CourseDTO>();
+            CreateMap<CourseModule, CourseModuleDTO>();
             CreateMap<StudentDTO, Student>();
             CreateMap<CourseDTO, Course>();
+            CreateMap<CourseModuleDTO, CourseModule>();
         }
     }
 }
